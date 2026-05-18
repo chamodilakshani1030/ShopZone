@@ -11,12 +11,12 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="sticky top-0 z-50 bg-white shadow-md">
+      <nav className="sticky top-0 z-50 bg-slate-950 text-white shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <Link to="/" className="shrink-0">
-              <span className="text-2xl font-bold text-blue-600">ShopZone</span>
+              <span className="text-2xl font-bold text-indigo-400">ShopZone</span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -27,17 +27,17 @@ export default function Navbar() {
                 placeholder="Search products..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                className="px-4 py-2 bg-slate-900 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-400"
               />
 
               {/* Nav Links */}
-              <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors">
+              <Link to="/" className="text-slate-200 hover:text-white transition-colors">
                 Home
               </Link>
-              <Link to="/shop" className="text-gray-700 hover:text-blue-600 transition-colors">
+              <Link to="/shop" className="text-slate-200 hover:text-white transition-colors">
                 Shop
               </Link>
-              <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors">
+              <a href="#about" className="text-slate-200 hover:text-white transition-colors">
                 About
               </a>
             </div>
@@ -46,7 +46,7 @@ export default function Navbar() {
             <div className="flex items-center gap-4">
               <button
                 onClick={() => setIsCartOpen(true)}
-                className="relative text-2xl hover:text-blue-600 transition-colors"
+                className="relative text-2xl hover:text-indigo-300 transition-colors"
               >
                 🛒
                 {totalItems > 0 && (
@@ -74,23 +74,23 @@ export default function Navbar() {
                 placeholder="Search products..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                className="w-full px-4 py-2 bg-slate-900 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-400"
               />
               <Link
                 to="/"
-                className="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg"
+                className="block px-4 py-2 text-slate-200 hover:bg-slate-900 rounded-lg"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
               <Link
                 to="/shop"
-                className="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg"
+                className="block px-4 py-2 text-slate-200 hover:bg-slate-900 rounded-lg"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Shop
               </Link>
-              <a href="#about" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg">
+              <a href="#about" className="block px-4 py-2 text-slate-200 hover:bg-slate-900 rounded-lg">
                 About
               </a>
             </div>

@@ -30,9 +30,9 @@ export default function ProductCard({ id, image, title, price, rating, category 
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-200 overflow-hidden h-full flex flex-col">
+    <div className="bg-slate-900 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 overflow-hidden h-full flex flex-col border border-slate-800">
       {/* Image Container */}
-      <div className="relative overflow-hidden bg-gray-100 h-48">
+      <div className="relative overflow-hidden bg-slate-950 h-48">
         <img
           src={image}
           alt={title}
@@ -40,7 +40,7 @@ export default function ProductCard({ id, image, title, price, rating, category 
         />
 
         {/* Category Badge */}
-        <div className="absolute top-3 left-3 bg-gray-400 text-white text-xs px-2 py-1 rounded-full">
+        <div className="absolute top-3 left-3 bg-indigo-500 text-white text-xs px-2 py-1 rounded-full">
           {category}
         </div>
 
@@ -56,7 +56,7 @@ export default function ProductCard({ id, image, title, price, rating, category 
       {/* Content */}
       <div className="p-4 flex flex-col grow">
         {/* Title */}
-        <h3 className="text-sm text-gray-900 font-semibold line-clamp-2 mb-2">
+        <h3 className="text-sm text-white font-semibold line-clamp-2 mb-2">
           {title}
         </h3>
 
@@ -69,19 +69,19 @@ export default function ProductCard({ id, image, title, price, rating, category 
         </div>
 
         {/* Price */}
-        <p className="text-lg font-bold text-blue-600 mb-4">${price.toFixed(2)}</p>
+        <p className="text-lg font-bold text-indigo-400 mb-4">${price.toFixed(2)}</p>
 
         {/* Actions */}
         <div className="space-y-2 mt-auto">
           <button
             onClick={handleAddToCart}
-            className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+            className="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition-colors font-semibold"
           >
             Add to Cart
           </button>
           <Link
             to={`/product/${id}`}
-            className="block text-center text-blue-600 text-sm hover:underline"
+            className="block text-center text-indigo-300 text-sm hover:underline"
           >
             View Details
           </Link>

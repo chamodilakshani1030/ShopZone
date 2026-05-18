@@ -10,7 +10,7 @@ import './App.css'
 
 export default function App() {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
+    <div className="flex flex-col min-h-screen bg-black text-white">
       <Navbar />
       <main className="grow">
         <Routes>

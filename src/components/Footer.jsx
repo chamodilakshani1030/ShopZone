@@ -2,14 +2,14 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-gray-800 text-white py-12">
+    <footer className="bg-black text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* About */}
           <div>
             <h3 className="text-xl font-bold mb-4">ShopZone</h3>
-            <p className="text-gray-400">
+            <p className="text-slate-400">
               Your one-stop destination for amazing products at unbeatable prices. Shop with confidence and enjoy the best deals.
             </p>
           </div>
@@ -17,7 +17,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-gray-400">
+            <ul className="space-y-2 text-slate-400">
               <li>
                 <a href="/" className="hover:text-white transition-colors">Home</a>
               </li>
@@ -36,14 +36,14 @@ export default function Footer() {
           {/* Newsletter */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Newsletter</h4>
-            <p className="text-gray-400 mb-4">Subscribe to get special offers and updates</p>
+            <p className="text-slate-400 mb-4">Subscribe to get special offers and updates</p>
             <div className="flex flex-col gap-2">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="px-4 py-2 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                className="px-4 py-2 rounded-lg bg-slate-900 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
-              <button className="bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition-colors font-semibold">
+              <button className="bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-lg transition-colors font-semibold">
                 Subscribe
               </button>
             </div>
@@ -51,10 +51,10 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-700 my-8"></div>
+        <div className="border-t border-slate-800 my-8"></div>
 
         {/* Copyright */}
-        <div className="text-center text-gray-400">
+        <div className="text-center text-slate-400">
           <p>&copy; {currentYear} ShopZone. All rights reserved.</p>
         </div>
       </div>

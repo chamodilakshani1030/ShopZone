@@ -20,10 +20,10 @@ export default function Home() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="bg-linear-to-r from-blue-600 to-indigo-600 text-white py-20">
+      <section className="bg-slate-950 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-4">Shop The Latest Trends</h1>
-          <p className="text-xl text-blue-100 mb-8">
+          <p className="text-xl text-slate-300 mb-8">
             Discover amazing products at unbeatable prices
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
@@ -44,17 +44,17 @@ export default function Home() {
       </section>
 
       {/* Featured Products */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-2">Featured Products</h2>
-            <p className="text-gray-600">Check out our best-selling items</p>
+            <h2 className="text-4xl font-bold text-white mb-2">Featured Products</h2>
+            <p className="text-slate-300">Check out our best-selling items</p>
           </div>
 
           {loading ? (
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {[...Array(8)].map((_, i) => (
-                <div key={i} className="bg-gray-300 rounded-xl h-80 animate-pulse"></div>
+                <div key={i} className="bg-slate-800 rounded-xl h-80 animate-pulse"></div>
               ))}
             </div>
           ) : (
@@ -76,11 +76,11 @@ export default function Home() {
       </section>
 
       {/* Categories Section */}
-      <section className="py-16">
+      <section className="py-16 bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-2">Shop by Category</h2>
-            <p className="text-gray-600">Browse our popular categories</p>
+            <h2 className="text-4xl font-bold text-white mb-2">Shop by Category</h2>
+            <p className="text-slate-300">Browse our popular categories</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -88,10 +88,10 @@ export default function Home() {
               <Link
                 key={cat.value}
                 to={`/shop?category=${cat.value}`}
-                className="bg-white rounded-xl shadow-md p-8 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-200"
+                className="bg-slate-900 rounded-xl shadow-md p-8 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-200"
               >
                 <div className="text-6xl mb-4">{cat.emoji}</div>
-                <h3 className="text-xl font-bold text-gray-900">{cat.name}</h3>
+                <h3 className="text-xl font-bold text-white">{cat.name}</h3>
               </Link>
             ))}
           </div>

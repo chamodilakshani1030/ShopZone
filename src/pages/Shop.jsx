@@ -73,14 +73,14 @@ export default function Shop() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-slate-950 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">Shop</h1>
+        <h1 className="text-4xl font-bold text-white mb-8">Shop</h1>
 
         {/* Mobile Sidebar Toggle */}
         <button
           onClick={() => setSidebarOpen(!sidebarOpen)}
-          className="md:hidden mb-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+          className="md:hidden mb-4 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors"
         >
           {sidebarOpen ? '✕ Close Filters' : '☰ Filters'}
         </button>
@@ -92,14 +92,14 @@ export default function Shop() {
               sidebarOpen ? 'block' : 'hidden md:block'
             }`}
           >
-            <div className="bg-white rounded-lg shadow-md p-6 space-y-6">
+            <div className="bg-slate-900 rounded-lg shadow-md p-6 space-y-6 border border-slate-800">
               <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-4">Filters</h3>
+                <h3 className="text-lg font-bold text-white mb-4">Filters</h3>
               </div>
 
               {/* Categories */}
               <div>
-                <h4 className="font-semibold text-gray-900 mb-3">Categories</h4>
+                <h4 className="font-semibold text-white mb-3">Categories</h4>
                 <div className="space-y-2">
                   {categories.map((cat) => (
                     <label key={cat} className="flex items-center gap-2 cursor-pointer">
@@ -107,9 +107,9 @@ export default function Shop() {
                         type="checkbox"
                         checked={selectedCategories.includes(cat)}
                         onChange={() => handleCategoryToggle(cat)}
-                        className="w-4 h-4 rounded border-gray-300"
+                        className="w-4 h-4 rounded border-slate-600 bg-slate-900"
                       />
-                      <span className="text-gray-700 capitalize">{cat}</span>
+                      <span className="text-slate-200 capitalize">{cat}</span>
                     </label>
                   ))}
                 </div>
@@ -117,7 +117,7 @@ export default function Shop() {
 
               {/* Price Range */}
               <div>
-                <h4 className="font-semibold text-gray-900 mb-3">Price Range</h4>
+                <h4 className="font-semibold text-white mb-3">Price Range</h4>
                 <div className="space-y-2">
                   <input
                     type="range"
@@ -128,7 +128,7 @@ export default function Shop() {
                     onChange={(e) => setPriceRange([priceRange[0], parseInt(e.target.value)])}
                     className="w-full"
                   />
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-slate-400">
                     ${priceRange[0]} - ${priceRange[1]}
                   </p>
                 </div>
@@ -137,7 +137,7 @@ export default function Shop() {
               {/* Clear Filters */}
               <button
                 onClick={handleClearFilters}
-                className="w-full bg-gray-200 text-gray-900 py-2 rounded-lg hover:bg-gray-300 transition-colors font-semibold"
+                className="w-full bg-slate-700 text-white py-2 rounded-lg hover:bg-slate-600 transition-colors font-semibold"
               >
                 Clear Filters
               </button>
@@ -148,8 +148,8 @@ export default function Shop() {
           <div className="grow">
             {/* Top Bar */}
             <div className="flex justify-between items-center mb-6 flex-wrap gap-4">
-              <p className="text-gray-600">
-                Showing <span className="font-bold">{filteredProducts.length}</span> products
+              <p className="text-slate-300">
+                Showing <span className="font-bold text-white">{filteredProducts.length}</span> products
               </p>
 
               <div className="flex gap-4 items-center flex-wrap">
@@ -158,13 +158,13 @@ export default function Shop() {
                   placeholder="Search products..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  className="px-4 py-2 bg-slate-900 border border-slate-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 />
 
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  className="px-4 py-2 bg-slate-900 border border-slate-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 >
                   <option value="default">Sort By</option>
                   <option value="price-low">Price: Low to High</option>
@@ -178,16 +178,16 @@ export default function Shop() {
             {loading ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[...Array(8)].map((_, i) => (
-                  <div key={i} className="bg-gray-300 rounded-xl h-80 animate-pulse"></div>
+                  <div key={i} className="bg-slate-800 rounded-xl h-80 animate-pulse"></div>
                 ))}
               </div>
             ) : filteredProducts.length === 0 ? (
               <div className="text-center py-16">
                 <p className="text-6xl mb-4">🔍</p>
-                <p className="text-xl text-gray-600">No products found</p>
+                <p className="text-xl text-slate-300">No products found</p>
                 <button
                   onClick={handleClearFilters}
-                  className="mt-4 text-blue-600 hover:underline font-semibold"
+                  className="mt-4 text-indigo-400 hover:text-indigo-300 font-semibold"
                 >
                   Clear filters and try again
                 </button>

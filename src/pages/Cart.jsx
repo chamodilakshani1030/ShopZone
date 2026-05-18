@@ -20,16 +20,16 @@ export default function Cart() {
 
   if (items.length === 0) {
     return (
-      <div className="min-h-screen bg-gray-50 py-16">
+      <div className="min-h-screen bg-slate-950 py-16 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-12">Your Cart</h1>
+          <h1 className="text-4xl font-bold text-white mb-12">Your Cart</h1>
 
-          <div className="text-center py-16 bg-white rounded-xl shadow-md">
+          <div className="text-center py-16 bg-slate-900 rounded-xl shadow-md border border-slate-800">
             <p className="text-6xl mb-4">🛒</p>
-            <p className="text-2xl text-gray-600 mb-6">Your cart is empty</p>
+            <p className="text-2xl text-slate-300 mb-6">Your cart is empty</p>
             <Link
               to="/shop"
-              className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-bold"
+              className="inline-block bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors font-bold"
             >
               Start Shopping
             </Link>
@@ -40,9 +40,9 @@ export default function Cart() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-16">
+    <div className="min-h-screen bg-slate-950 py-16 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">
+        <h1 className="text-4xl font-bold text-white mb-8">
           Your Cart ({items.reduce((sum, item) => sum + item.qty, 0)} items)
         </h1>
 
@@ -52,19 +52,19 @@ export default function Cart() {
             {items.map((item) => (
               <div
                 key={item.id}
-                className="bg-white rounded-xl shadow-md p-6 flex gap-4"
+                className="bg-slate-900 rounded-xl shadow-md p-6 flex gap-4 border border-slate-800"
               >
                 {/* Image */}
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-20 h-20 object-contain bg-gray-100 rounded shrink-0"
+                  className="w-20 h-20 object-contain bg-slate-950 rounded shrink-0"
                 />
 
                 {/* Content */}
                 <div className="grow">
-                  <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-blue-600 font-semibold mb-3">
+                  <h3 className="font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-indigo-400 font-semibold mb-3">
                     ${item.price.toFixed(2)} each
                   </p>
 
@@ -88,7 +88,7 @@ export default function Cart() {
 
                 {/* Line Total & Remove */}
                 <div className="text-right flex flex-col justify-between">
-                  <p className="font-bold text-gray-900">
+                  <p className="font-bold text-white">
                     ${(item.price * item.qty).toFixed(2)}
                   </p>
                   <button
@@ -104,15 +104,15 @@ export default function Cart() {
 
           {/* Order Summary */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-xl shadow-md p-6 sticky top-20 space-y-4">
-              <h2 className="text-xl font-bold text-gray-900">Order Summary</h2>
+            <div className="bg-slate-900 rounded-xl shadow-md p-6 sticky top-20 space-y-4 border border-slate-800">
+              <h2 className="text-xl font-bold text-white">Order Summary</h2>
 
               <div className="space-y-3 border-b border-gray-200 pb-4">
-                <div className="flex justify-between text-gray-600">
+                <div className="flex justify-between text-slate-300">
                   <span>Subtotal</span>
                   <span>${subtotal.toFixed(2)}</span>
                 </div>
-                <div className="flex justify-between text-gray-600">
+                <div className="flex justify-between text-slate-300">
                   <span>Shipping</span>
                   <span>
                     {shipping === 0 ? (
@@ -122,15 +122,15 @@ export default function Cart() {
                     )}
                   </span>
                 </div>
-                <div className="flex justify-between text-gray-600">
+                <div className="flex justify-between text-slate-300">
                   <span>Tax (8%)</span>
                   <span>${tax.toFixed(2)}</span>
                 </div>
               </div>
 
-              <div className="flex justify-between text-xl font-bold text-gray-900">
+              <div className="flex justify-between text-xl font-bold text-white">
                 <span>Total</span>
-                <span className="text-blue-600">${total.toFixed(2)}</span>
+                <span className="text-indigo-400">${total.toFixed(2)}</span>
               </div>
 
               <Link
